@@ -1,0 +1,260 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+html,body{
+    height: 100%;
+    background-color: #F2E3EA;
+    overflow: hidden;
+}
+
+.clear{
+    clear: both;
+}
+
+.container{
+    position: relative;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+}
+
+.box{
+    position: relative;
+    width: 100%;
+    /* max-width: 50vw; */
+    height: 100vh;
+    
+    display: inline-block;
+}
+
+.box1{
+    max-width: 55vw;
+    float: left;
+    background-color: #F4EBEB;
+    text-align: center;
+    color: #77838C;
+    /* font-family: swanky-and-moo-moo, sans-serif; */
+    font-family: annie-use-your-telescope, sans-serif;
+}
+
+.box header{
+    width: 100%;
+    margin-top: 60px;
+    
+    height: 200px;
+}
+
+.box header h1{
+    font-size: 60px;
+    font-weight: bold;
+    line-height: 60px;
+}
+
+.box1 header h1::after{
+    content: '|';
+    margin-left: 5px;
+    opacity: 1;
+    /* color: #333333; */
+    animation: pisca .7s infinite;
+}
+
+@keyframes pisca {
+    0%, 100%{
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+}
+
+section.game{
+    width: 100%;
+    margin-top: 40px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    
+}
+
+.game-container{
+    width: 100%;
+    margin-top: 100px;
+    /* ; */
+    height: 300px;
+    
+    /* text-align: ; */
+}
+
+.option{
+    /* float: left; */
+    display: inline-block;
+    width: calc(100% / 3);
+    /* max-width: 227px; */
+    max-width: 160px;
+    height: 160px;
+    cursor: pointer;
+
+    margin: 0 10px;
+    outline: 0;
+    border: 0 none;
+    box-shadow: 0 0 0 0;
+
+    background-image: url("../images/rock-off2.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    transition: .2s;
+}
+
+.box1 .option:nth-of-type(2){
+    background-image: url("../images/paper-off.png");
+}
+
+.box1 .option:nth-of-type(3){
+    background-image: url("../images/scissors-off.png");
+    
+}
+
+.box1 .option:nth-of-type(1):hover{
+    background-image: url("../images/rock-on2.png");
+}
+
+.box1 .option:nth-of-type(2):hover{
+    background-image: url("../images/paper-on.png");
+}
+
+.box1 .option:nth-of-type(3):hover{
+    background-image: url("../images/scissors-on.png");
+}
+
+.box2{
+    font-family: annie-use-your-telescope, sans-serif;
+    text-align: center;
+    max-width: 45vw;
+    float: right;
+    background-color: #493B38;
+    color: #C4E8E5;
+    font-weight: lighter;
+}
+
+.box #txtBox2{
+    width: 100%;
+    margin-top: 60px;
+    
+    font-size: 60px;
+    font-weight: bold;
+    line-height: 60px;
+}
+
+
+#result{
+    font-size: 60pt;
+    color: #fec63e;
+    position: absolute;
+    left: 80px;
+    bottom: 40px;
+    font-weight: bold;
+}
+
+@media screen and (max-width: 768px){
+    .box header{
+        margin: 0;
+        height: auto;
+        /* background-color: blue; */
+    }
+
+    .box header h1{
+        margin-top: 20px;
+        font-size: 38px;
+        font-weight: lighter;
+        /* line-height: 10px; */
+    }
+
+
+    .container{
+        flex-direction: column;
+    }
+
+    .box{
+        position: relative;
+        width: 100%;
+        /* max-width: 50vw; */
+        height: 50vh;
+    }
+
+    .box1, .box2{
+        max-width: 100vw;
+    }
+
+    section.game{
+        /* background-color: red; */
+        margin-top: 0px;
+        
+    }
+    .game-container{
+        margin-top: 0px;
+        /* ; */
+        height: 0;
+        
+        /* text-align: ; */
+    }
+
+    .option{
+        max-width: 120px;
+        height: 120px;
+        margin: 40px 10px 0 10px;
+    }
+
+    #result{
+        font-size: 48pt;
+        position: absolute;
+        left: 10px;
+        bottom: 20px;
+        font-weight: bold;
+    }
+
+    .box .option{
+        outline: 0;
+    }
+
+    .box .option:focus{
+        outline: 0;
+    }
+
+    .box1 .option:nth-of-type(1):hover{
+        background-image: url('../images/rock-off2.png');
+    }
+    
+    .box1 .option:nth-of-type(2):hover{
+        background-image: url('../images/paper-off.png');
+    }
+    
+    .box1 .option:nth-of-type(3):hover{
+        background-image: url('../images/scissors-off.png');
+    }
+
+    .box1 .option:nth-of-type(1):active, .box1 .option:nth-of-type(1):hover{
+        background-image: url("../images/rock-on2.png");
+    }
+    
+    .box1 .option:nth-of-type(2):active, .box1 .option:nth-of-type(2):hover{
+        background-image: url("../images/paper-on.png");
+    }
+    
+    .box1 .option:nth-of-type(3):active, .box1 .option:nth-of-type(3):hover{
+        background-image: url("../images/scissors-on.png");
+    }
+
+    
+
+
+}
+
+/* 
+cores:
+a8a8a8
+77838c
+naruteiraaSextaFeira
+ */
